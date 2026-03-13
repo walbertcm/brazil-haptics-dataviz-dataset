@@ -1,0 +1,28 @@
+id,state,state_code,region,region_code,year,pm25_mean,pm25_category,sanitation_coverage_pct,wildfire_hotspots_thousands,respiratory_hospitalizations_per100k,life_expectancy,primary_care_coverage_pct
+1,Acre,AC,North,1,2023,19.2,High,45,3.1,210,73.5,62
+2,Alagoas,AL,Northeast,2,2023,15.1,High,52,1.1,185,72.4,68
+3,Amapa,AP,North,1,2023,17.8,High,49,0.9,170,74.1,64
+4,Amazonas,AM,North,1,2023,20.3,Very High,41,4.5,230,72.8,60
+5,Bahia,BA,Northeast,2,2023,14.8,Moderate,58,2.0,195,73.9,71
+6,Ceara,CE,Northeast,2,2023,13.2,Moderate,61,1.8,180,74.5,73
+7,Distrito Federal,DF,Central-West,3,2023,11.5,Low,88,0.2,160,78.1,82
+8,Espirito Santo,ES,Southeast,4,2023,10.9,Low,82,0.7,150,77.4,80
+9,Goias,GO,Central-West,3,2023,14.5,Moderate,74,1.9,175,75.6,77
+10,Maranhao,MA,Northeast,2,2023,18.4,High,46,2.6,205,71.9,65
+11,Mato Grosso,MT,Central-West,3,2023,17.2,High,63,5.4,220,74.0,69
+12,Mato Grosso do Sul,MS,Central-West,3,2023,15.9,High,70,3.8,200,75.2,72
+13,Minas Gerais,MG,Southeast,4,2023,11.8,Low,79,1.5,165,77.0,78
+14,Para,PA,North,1,2023,19.7,High,47,4.9,225,73.2,66
+15,Paraiba,PB,Northeast,2,2023,14.1,Moderate,60,1.3,175,74.3,72
+16,Parana,PR,South,5,2023,9.8,Very Low,90,0.9,150,78.3,84
+17,Pernambuco,PE,Northeast,2,2023,15.3,High,63,1.7,190,74.8,74
+18,Piaui,PI,Northeast,2,2023,16.2,High,50,2.2,200,72.6,67
+19,Rio de Janeiro,RJ,Southeast,4,2023,12.4,Moderate,85,0.6,155,76.9,81
+20,Rio Grande do Norte,RN,Northeast,2,2023,13.6,Moderate,64,1.4,170,75.0,73
+21,Rio Grande do Sul,RS,South,5,2023,9.1,Very Low,92,0.8,148,78.6,85
+22,Rondonia,RO,North,1,2023,18.5,High,55,4.1,215,73.7,68
+23,Roraima,RR,North,1,2023,18.9,High,48,1.2,180,73.0,65
+24,Santa Catarina,SC,South,5,2023,8.4,Very Low,93,0.5,145,79.0,86
+25,Sao Paulo,SP,Southeast,4,2023,11.3,Low,96,0.4,140,78.8,88
+26,Sergipe,SE,Northeast,2,2023,14.7,Moderate,59,1.0,175,73.6,70
+27,Tocantins,TO,North,1,2023,17.5,High,54,2.7,205,74.1,69
