@@ -1,47 +1,48 @@
 # Data Dictionary
 
-This document describes the variables present in the dataset.
+Brazil Environment–Health Multimodal Dataset
 
-Column;Type;Description;Unit;Source;Notes
-id;integer;Unique identifier for each observation;—;generated;State-year combination
-year;integer;Year of observation;year;IBGE / study design;Temporal dimension
-state;categorical;Brazilian federative unit name;—;IBGE;State name
-state_code;categorical;Two-letter state abbreviation;—;IBGE;UF code
-region;categorical;Geographic region;—;IBGE;North, Northeast, Midwest, Southeast, South
-pm25_mean;numeric;Annual mean concentration of fine particulate matter (PM2.5);µg/m³;OpenAQ / Copernicus (target source for real data);Air pollution indicator
-pm10_mean;numeric;Annual mean concentration of particulate matter PM10;µg/m³;OpenAQ / Copernicus (target source for real data);Air pollution indicator
-no2_mean;numeric;Annual mean nitrogen dioxide concentration;µg/m³;OpenAQ (target source for real data);Traffic-related pollutant
-o3_mean;numeric;Annual mean ozone concentration;µg/m³;Copernicus (target source for real data);Secondary pollutant
-wildfire_hotspots;numeric;Annual number of detected wildfire hotspots;count;INPE Queimadas (target source for real data);Proxy for biomass burning
-deforestation_rate;numeric;Annual deforested area;km²;INPE PRODES (target source for real data);Environmental pressure indicator
-respiratory_hospitalizations;numeric;Hospitalizations due to respiratory diseases per 100k inhabitants;cases/100k;DATASUS (target source for real data);Respiratory health outcome
-asthma_rate;numeric;Hospitalization rate for asthma;cases/100k;DATASUS (target source for real data);Asthma burden indicator
-copd_rate;numeric;Hospitalization rate for chronic obstructive pulmonary disease;cases/100k;DATASUS (target source for real data);COPD burden indicator
-respiratory_mortality;numeric;Mortality rate due to respiratory diseases;deaths/100k;DATASUS (target source for real data);Respiratory mortality outcome
-sanitation_coverage;numeric;Population with access to sanitation services;%;SNIS / IBGE (target source for real data);Environmental health infrastructure
-primary_care_coverage;numeric;Coverage of primary healthcare services;%;Ministry of Health (target source for real data);Primary healthcare infrastructure
-hospital_beds_per1000;numeric;Number of hospital beds per 1000 inhabitants;beds/1000;Ministry of Health (target source for real data);Healthcare capacity
-population_density;numeric;Population density;inhabitants/km²;IBGE (target source for real data);Demographic exposure factor
-gdp_per_capita;numeric;Gross domestic product per capita;BRL;IBGE (target source for real data);Socioeconomic indicator
-annual_mean_temperature;numeric;Mean annual air temperature;°C;INMET (target source for real data);Climate condition
-relative_humidity;numeric;Mean annual relative humidity;%;INMET (target source for real data);Affects pollutant dispersion
-urbanization_rate;numeric;Percentage of population living in urban areas;%;IBGE (target source for real data);Urban exposure indicator
-pm25_category;categorical;PM2.5 annual air-quality class;category;Applied rule (WHO-inspired thresholds);Derived from pm25_mean
-pm10_category;categorical;PM10 annual air-quality class;category;Applied rule (threshold bins);Derived from pm10_mean
-no2_pollution_level;categorical;NO2 annual pollution level;category;Applied rule (threshold bins);Derived from no2_mean
-o3_pollution_level;categorical;O3 annual pollution level;category;Applied rule (threshold bins);Derived from o3_mean
-wildfire_intensity;categorical;Wildfire activity level;quartile class;Applied rule (sample quartiles);Derived from wildfire_hotspots
-deforestation_level;categorical;Deforestation pressure level;quartile class;Applied rule (sample quartiles);Derived from deforestation_rate
-respiratory_risk_level;categorical;Overall respiratory hospitalization burden level;quartile class;Applied rule (sample quartiles);Derived from respiratory_hospitalizations
-asthma_risk_level;categorical;Asthma burden level;quartile class;Applied rule (sample quartiles);Derived from asthma_rate
-copd_risk_level;categorical;COPD burden level;quartile class;Applied rule (sample quartiles);Derived from copd_rate
-respiratory_mortality_level;categorical;Respiratory mortality burden level;quartile class;Applied rule (sample quartiles);Derived from respiratory_mortality
-sanitation_level;categorical;Sanitation coverage class;category;Applied rule (infrastructure thresholds);Derived from sanitation_coverage
-primary_care_level;categorical;Primary care coverage class;category;Applied rule (coverage thresholds);Derived from primary_care_coverage
-hospital_bed_capacity;categorical;Hospital bed availability class;category;Applied rule (capacity thresholds);Derived from hospital_beds_per1000
-population_density_class;categorical;Population density class;category;Applied rule (urbanity thresholds);Derived from population_density
-economic_level;categorical;GDP per capita class;category;Applied rule (income-like thresholds);Derived from gdp_per_capita
-temperature_zone;categorical;Annual temperature zone;category;Applied rule (climate thresholds);Derived from annual_mean_temperature
-humidity_level;categorical;Annual humidity level;category;Applied rule (climate thresholds);Derived from relative_humidity
-urbanization_class;categorical;Urbanization class;category;Applied rule (urbanization thresholds);Derived from urbanization_rate
+This dataset integrates environmental, health, climate, infrastructure, and socioeconomic indicators for Brazilian federative units between 2015 and 2023.
+The dataset was designed to support multisensory data visualization and environmental health analysis.
+
+| Column                       | Type        | Description                                | Unit            | Source              | Derived From                 | Classification Rule / Notes                                    |
+| ---------------------------- | ----------- | ------------------------------------------ | --------------- | ------------------- | ---------------------------- | -------------------------------------------------------------- |
+| id                           | integer     | Unique observation identifier              | —               | Generated           | —                            | State–year record                                              |
+| year                         | integer     | Observation year                           | year            | IBGE                | —                            | Temporal dimension                                             |
+| state                        | categorical | Brazilian state name                       | —               | IBGE                | —                            |                                                                |
+| state_code                   | categorical | Two-letter state abbreviation              | —               | IBGE                | —                            |                                                                |
+| region                       | categorical | Brazilian geographic region                | —               | IBGE                | —                            | North, Northeast, Midwest, Southeast, South                    |
+| pm25_mean                    | numeric     | Annual mean PM2.5 concentration            | µg/m³           | OpenAQ / Copernicus | —                            | Fine particulate matter                                        |
+| pm10_mean                    | numeric     | Annual mean PM10 concentration             | µg/m³           | OpenAQ / Copernicus | —                            | Coarse particles                                               |
+| no2_mean                     | numeric     | Annual mean nitrogen dioxide concentration | µg/m³           | OpenAQ              | —                            | Traffic pollution indicator                                    |
+| o3_mean                      | numeric     | Annual mean ozone concentration            | µg/m³           | Copernicus          | —                            | Secondary pollutant                                            |
+| wildfire_hotspots            | numeric     | Annual wildfire hotspot count              | count           | INPE                | —                            | Biomass burning indicator                                      |
+| deforestation_rate           | numeric     | Annual deforested area                     | km²             | INPE PRODES         | —                            | Environmental pressure                                         |
+| respiratory_hospitalizations | numeric     | Respiratory hospitalizations               | cases/100k      | DATASUS             | —                            | Respiratory diseases                                           |
+| asthma_rate                  | numeric     | Asthma hospitalization rate                | cases/100k      | DATASUS             | —                            |                                                                |
+| copd_rate                    | numeric     | COPD hospitalization rate                  | cases/100k      | DATASUS             | —                            |                                                                |
+| respiratory_mortality        | numeric     | Mortality from respiratory diseases        | deaths/100k     | DATASUS             | —                            |                                                                |
+| sanitation_coverage          | numeric     | Population with sanitation access          | %               | SNIS / IBGE         | —                            | Environmental health factor                                    |
+| primary_care_coverage        | numeric     | Primary healthcare coverage                | %               | Ministry of Health  | —                            |                                                                |
+| hospital_beds_per1000        | numeric     | Hospital beds per 1000 inhabitants         | beds/1000       | Ministry of Health  | —                            | Healthcare capacity                                            |
+| population_density           | numeric     | Population density                         | inhabitants/km² | IBGE                | —                            | Exposure indicator                                             |
+| gdp_per_capita               | numeric     | GDP per capita                             | BRL             | IBGE                | —                            | Economic indicator                                             |
+| annual_mean_temperature      | numeric     | Mean annual temperature                    | °C              | INMET               | —                            | Climate condition                                              |
+| relative_humidity            | numeric     | Mean annual relative humidity              | %               | INMET               | —                            | Air dispersion factor                                          |
+| urbanization_rate            | numeric     | Population living in urban areas           | %               | IBGE                | —                            | Urban exposure indicator                                       |
+| pm25_category                | categorical | PM2.5 air quality category                 | —               | Derived             | pm25_mean                    | WHO Air Quality thresholds                                     |
+| pm10_category                | categorical | PM10 air quality category                  | —               | Derived             | pm10_mean                    | WHO thresholds                                                 |
+| no2_pollution_level          | categorical | NO₂ pollution level                        | —               | Derived             | no2_mean                     | WHO thresholds                                                 |
+| o3_pollution_level           | categorical | O₃ pollution level                         | —               | Derived             | o3_mean                      | WHO thresholds                                                 |
+| wildfire_intensity           | categorical | Wildfire intensity level                   | —               | Derived             | wildfire_hotspots            | Quartile / empirical classification                            |
+| deforestation_level          | categorical | Deforestation pressure level               | —               | Derived             | deforestation_rate           | Threshold classification                                       |
+| respiratory_risk_level       | categorical | Respiratory health risk level              | —               | Derived             | respiratory_hospitalizations | Quartile classification                                        |
+| sanitation_level             | categorical | Sanitation infrastructure level            | —               | Derived             | sanitation_coverage          | Universal ≥90%, Adequate 70–90, Limited 50–70, Critical <50    |
+| healthcare_capacity_level    | categorical | Healthcare infrastructure capacity         | —               | Derived             | hospital_beds_per1000        | Low <2, Moderate 2–3, High >3                                  |
+| population_density_class     | categorical | Population density category                | —               | Derived             | population_density           | Rural <20, Semi-urban 20–100, Urban 100–300, Metropolitan >300 |
+| economic_level               | categorical | Economic development level                 | —               | Derived             | gdp_per_capita               | World Bank income thresholds                                   |
+| temperature_zone             | categorical | Climate temperature category               | —               | Derived             | annual_mean_temperature      | Mild <20, Warm 20–24, Hot 24–27, Very Hot >27                  |
+| humidity_level               | categorical | Relative humidity class                    | —               | Derived             | relative_humidity            | Dry <50, Moderate 50–70, Humid 70–85, Very Humid >85           |
+| urbanization_class           | categorical | Urbanization level                         | —               | Derived             | urbanization_rate            | Low <60, Medium 60–75, High 75–90, Highly urbanized >90        |
+
 
